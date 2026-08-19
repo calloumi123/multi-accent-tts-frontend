@@ -1,9 +1,5 @@
 # TTS frontend pipeline
 
-> ## ⚠️ KEEP THIS REPO PRIVATE
-> `unilex` is a licensed CSTR / University of Edinburgh lexicon and is **not
-> freely redistributable**. Publishing it would be a licence violation, and the
-> copy here may be employer-licensed. Private repo only.
 
 Grapheme→phoneme TTS frontend: Tacotron-style seq2seq with GMM attention,
 ~10M parameters.
@@ -31,3 +27,19 @@ separately from the public research repo; it is not vendored here.
 
 A checkpoint is 115 MB (40 MB of weights plus Adam's two moment tensors), above
 GitHub's 100 MB per-file limit. `.gitignore` already excludes them.
+
+## Licensing and provenance
+
+**Code** (`scripts/`, `train_frontend.ipynb`, `dist/`) — MIT, see `LICENSE`.
+The copyright notice of the upstream project is retained as MIT requires.
+
+**`unilex`** — the Unisyn/Unilex master lexicon, originating from CSTR,
+University of Edinburgh. It is included here under the repository author's
+academic-use permission as an Edinburgh student. It is **third-party data and is
+not covered by the MIT licence above** — that licence applies to the code only,
+and no relicensing of the lexicon is claimed or implied. If you are not covered
+by your own Unisyn permission, obtain the lexicon from CSTR directly rather than
+from this repository.
+
+**Training code** — `train.py`, `datasets.py` and the model layers are cloned at
+runtime from the upstream research repo and are not vendored here.

@@ -1,0 +1,12 @@
+# Never commit training artefacts. A single checkpoint is 115 MB, which is over
+# GitHub's 100 MB hard per-file limit -- the push would be rejected outright.
+*.pth.tar
+runs/
+dataset/
+dataset.tar.gz
+bundle/
+corpus*.txt
+*.log
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

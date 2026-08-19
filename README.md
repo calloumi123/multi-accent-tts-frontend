@@ -2,7 +2,17 @@
 
 
 Grapheme→phoneme TTS frontend: Tacotron-style seq2seq with GMM attention,
-~10M parameters.
+~10M parameters, trained on **three realised accents**:
+
+| Accent | Variety | Example |
+|---|---|---|
+| `edi` | Edinburgh Scottish (rhotic, tapped r) | `run` → `t^ uh n` |
+| `gam` | General American (rhotic) | `bath` → `b a th` |
+| `rpx` | RP (non-rhotic) | `bath` → `b aa th`, `for` → `f @` |
+
+All three lexicons share the identical 116,739 headwords, so training on all
+three costs no coverage. Each sentence becomes three aligned training items
+(one `src`, three `tgt`), and the model learns a 32-dim accent embedding.
 
 ## Layout
 
